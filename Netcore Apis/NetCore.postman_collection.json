@@ -1,0 +1,898 @@
+{
+  "info": {
+    "_postman_id": "5fb9ba51-fb8a-4ef9-893a-bc1741205b9f",
+    "name": "NetCore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58236078",
+    "_collection_link": "https://go.postman.co/collection/58236078-5fb9ba51-fb8a-4ef9-893a-bc1741205b9f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Whatsapp",
+      "item": [
+        {
+          "name": "Template List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZmRsd2F8NzA2NjExNDEyNCIsImV4cCI6MjYxMDcwNjEzNH0.YJi5b1FkkSQi4BBuyONjkAiuDjP2covConOBFkWVeg9YpsOzro1dUH8cuHmkmcH6Htq-Kmmwr7cVyYZ9BvNLug",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://cpaaswa.netcorecloud.net/api/v3/metainfo/template/list",
+              "protocol": "https",
+              "host": [
+                "cpaaswa",
+                "netcorecloud",
+                "net"
+              ],
+              "path": [
+                "api",
+                "v3",
+                "metainfo",
+                "template",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Preview Single Templates",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZmRsd2F8NzA2NjExNDEyNCIsImV4cCI6MjYxMDcwNjEzNH0.YJi5b1FkkSQi4BBuyONjkAiuDjP2covConOBFkWVeg9YpsOzro1dUH8cuHmkmcH6Htq-Kmmwr7cVyYZ9BvNLug",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://cpaaswa.netcorecloud.net/api/v3/metainfo/template/preview?templateid=359313",
+              "protocol": "https",
+              "host": [
+                "cpaaswa",
+                "netcorecloud",
+                "net"
+              ],
+              "path": [
+                "api",
+                "v3",
+                "metainfo",
+                "template",
+                "preview"
+              ],
+              "query": [
+                {
+                  "key": "templateid",
+                  "value": "359313"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Send Whatspp Message in Bulk",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZmRsd2F8NzA2NjExNDEyNCIsImV4cCI6MjYxMDcwNjEzNH0.YJi5b1FkkSQi4BBuyONjkAiuDjP2covConOBFkWVeg9YpsOzro1dUH8cuHmkmcH6Htq-Kmmwr7cVyYZ9BvNLug"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n{\n  \"message\": [\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://cpaaswa.netcorecloud.net/api/v2/message/nc",
+              "protocol": "https",
+              "host": [
+                "cpaaswa",
+                "netcorecloud",
+                "net"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "message",
+                "nc"
+              ]
+            },
+            "description": "Generated from cURL: curl --request POST \\\n     --url https://cpaaswa.netcorecloud.net/api/v2/message/nc \\\n     --header 'accept: application/json' \\\n     --header 'authorization: Bearer 5907621c8e38332753d8c34ae' \\\n     --header 'content-type: application/json' \\\n     --data '\n{\n  \"message\": [\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    },\n    {\n      \"recipient_whatsapp\": \"919664593753\",\n      \"message_type\": \"media_template\",\n      \"recipient_type\": \"individual\",\n      \"source\": \"akshay\",\n      \"cta_link_track\": 1,\n      \"type_media_template\": {\n        \"type\": \"image\",\n        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg\",\n        \"filename\": \"Sunflower image.jpg\",\n        \"button\": [\n          {\n            \"index\": \"0\",\n            \"payload\": \"https://www.netcorecloud.com\",\n            \"sub_type\": \"copy_code\"\n          }\n        ]\n      },\n      \"type_template\": [\n        {\n          \"name\": \"temp_dynamic_btn\",\n          \"attributes\": [\n            \"akshay\"\n          ],\n          \"language\": {\n            \"locale\": \"en\",\n            \"policy\": \"deterministic\"\n          }\n        }\n      ]\n    }\n  ]\n}\n'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RCS",
+      "item": [
+        {
+          "name": "Fetch Templates",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{rcs_api_key}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "api_key",
+                "value": "{{rcs_api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://soipapi.netcorecloud.com/rcs/template",
+              "protocol": "https",
+              "host": [
+                "soipapi",
+                "netcorecloud",
+                "com"
+              ],
+              "path": [
+                "rcs",
+                "template"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Fetch Templates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "api_key",
+                    "value": "5907621c8e38332753d8c34ae",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://soipapi.netcorecloud.com/rcs/template",
+                  "protocol": "https",
+                  "host": [
+                    "soipapi",
+                    "netcorecloud",
+                    "com"
+                  ],
+                  "path": [
+                    "rcs",
+                    "template"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-headers",
+                  "value": "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding, x-access-token"
+                },
+                {
+                  "key": "access-control-allow-methods",
+                  "value": "POST, GET, OPTIONS"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "https://*.netcorecloud.com, https://*.netcorecloud.net, https://*.falconide.com, https://*.pepipost.com"
+                },
+                {
+                  "key": "access-control-max-age",
+                  "value": "86400"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-store, no-cache, must-revalidate"
+                },
+                {
+                  "key": "content-security-policy",
+                  "value": "script-src 'self'; object-src 'none'; default-src 'self'"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "deny"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "1; mode=block"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 16 Sep 2026 07:49:22 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Google Frontend"
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google"
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "h3=\":443\"; ma=2592000"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Data fetched successfully\",\n    \"client_id\": 155124,\n    \"data\": {\n        \"bot_id\": \"NjlmMWMxM155124\",\n        \"bot_type\": \"Promotional\",\n        \"bot_name\": \"BFDL_PS_1_071_JIO\",\n        \"templates\": [\n            {\n                \"template_id\": 46307,\n                \"template_name\": \"test_new_content\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-09-08 15:56:25\",\n                \"modified_at\": \"2026-09-08 15:58:03\"\n            },\n            {\n                \"template_id\": 46300,\n                \"template_name\": \"test_new_content1\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-09-08 15:46:05\",\n                \"modified_at\": \"2026-09-08 15:50:02\"\n            },\n            {\n                \"template_id\": 44390,\n                \"template_name\": \"unsec_rcs_short_26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-24 17:19:49\",\n                \"modified_at\": \"2026-08-24 17:30:03\"\n            },\n            {\n                \"template_id\": 44342,\n                \"template_name\": \"unsec_rcs_2cta_aug\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-24 13:41:04\",\n                \"modified_at\": \"2026-08-24 13:52:34\"\n            },\n            {\n                \"template_id\": 41961,\n                \"template_name\": \"unsec_rcs_15lac_aug\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-07 17:23:43\",\n                \"modified_at\": \"2026-08-24 12:02:03\"\n            },\n            {\n                \"template_id\": 43487,\n                \"template_name\": \"unsec_pb_2428_aug26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-18 12:40:51\",\n                \"modified_at\": \"2026-08-18 12:42:03\"\n            },\n            {\n                \"template_id\": 41956,\n                \"template_name\": \"unsec_rcs_5lac_aug\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-07 17:21:09\",\n                \"modified_at\": \"2026-08-13 12:56:20\"\n            },\n            {\n                \"template_id\": 42407,\n                \"template_name\": \"unsec_j2331_r1_aug26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-11 10:44:01\",\n                \"modified_at\": \"2026-08-11 10:58:03\"\n            },\n            {\n                \"template_id\": 29065,\n                \"template_name\": \"unsec_j2331_rcs_r1\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-06 11:28:40\",\n                \"modified_at\": \"2026-08-10 12:27:32\"\n            },\n            {\n                \"template_id\": 38316,\n                \"template_name\": \"unsec_test26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"pending\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-07-13 13:04:16\",\n                \"modified_at\": \"2026-07-13 13:04:16\"\n            },\n            {\n                \"template_id\": 35551,\n                \"template_name\": \"unsec_sol_2397_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-22 19:22:25\",\n                \"modified_at\": \"2026-06-22 19:24:03\"\n            },\n            {\n                \"template_id\": 35213,\n                \"template_name\": \"unsec_sol_2393_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-19 19:00:22\",\n                \"modified_at\": \"2026-06-19 19:02:03\"\n            },\n            {\n                \"template_id\": 34555,\n                \"template_name\": \"usnec_rcs_7181_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-15 10:59:28\",\n                \"modified_at\": \"2026-06-15 11:02:02\"\n            },\n            {\n                \"template_id\": 34229,\n                \"template_name\": \"unsec_rcs_pa_1728\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-12 13:58:37\",\n                \"modified_at\": \"2026-06-12 14:08:47\"\n            },\n            {\n                \"template_id\": 34099,\n                \"template_name\": \"unsec_jry_2379_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-11 17:38:24\",\n                \"modified_at\": \"2026-06-11 17:42:03\"\n            },\n            {\n                \"template_id\": 33912,\n                \"template_name\": \"unsec_jr_2361_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-10 16:09:39\",\n                \"modified_at\": \"2026-06-10 16:12:02\"\n            },\n            {\n                \"template_id\": 33908,\n                \"template_name\": \"unsec_pl_2361_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-10 15:43:48\",\n                \"modified_at\": \"2026-06-10 15:46:03\"\n            },\n            {\n                \"template_id\": 33774,\n                \"template_name\": \"unsec_rcs_gif2_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-09 15:04:38\",\n                \"modified_at\": \"2026-06-09 15:14:03\"\n            },\n            {\n                \"template_id\": 33764,\n                \"template_name\": \"unsec_rcs_1830_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-09 14:06:23\",\n                \"modified_at\": \"2026-06-09 14:08:22\"\n            },\n            {\n                \"template_id\": 33025,\n                \"template_name\": \"unsec_rcs_txt_2_04ju\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-06-04 08:30:23\",\n                \"modified_at\": \"2026-06-04 08:40:03\"\n            },\n            {\n                \"template_id\": 32963,\n                \"template_name\": \"unsec_rcs_gift_03jun\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-03 18:32:37\",\n                \"modified_at\": \"2026-06-03 18:34:03\"\n            },\n            {\n                \"template_id\": 32941,\n                \"template_name\": \"lp_rcs_230_03jun26\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-06-03 16:38:33\",\n                \"modified_at\": \"2026-06-03 17:26:03\"\n            },\n            {\n                \"template_id\": 32774,\n                \"template_name\": \"unsec_plcsof_02jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"pending\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-02 16:50:45\",\n                \"modified_at\": \"2026-06-02 16:50:45\"\n            },\n            {\n                \"template_id\": 32107,\n                \"template_name\": \"unsc_jry_2359_v2\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-28 12:59:30\",\n                \"modified_at\": \"2026-06-01 17:51:27\"\n            },\n            {\n                \"template_id\": 32505,\n                \"template_name\": \"unsec_pvs_off_jun26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-01 08:14:54\",\n                \"modified_at\": \"2026-06-01 08:20:03\"\n            },\n            {\n                \"template_id\": 32110,\n                \"template_name\": \"unsec_jry_2361_may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-28 13:22:51\",\n                \"modified_at\": \"2026-05-29 17:32:03\"\n            },\n            {\n                \"template_id\": 32095,\n                \"template_name\": \"unsec_jry_2359_may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-28 10:38:56\",\n                \"modified_at\": \"2026-05-28 11:04:03\"\n            },\n            {\n                \"template_id\": 31915,\n                \"template_name\": \"unsec_jry_2358_may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-26 17:41:37\",\n                \"modified_at\": \"2026-05-26 17:44:03\"\n            },\n            {\n                \"template_id\": 30249,\n                \"template_name\": \"lp_unsec_rd1_may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-14 12:30:12\",\n                \"modified_at\": \"2026-05-14 12:40:03\"\n            },\n            {\n                \"template_id\": 29939,\n                \"template_name\": \"lp_unsec_prime_may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-12 14:42:24\",\n                \"modified_at\": \"2026-05-12 19:08:03\"\n            },\n            {\n                \"template_id\": 29890,\n                \"template_name\": \"unsec_plcsof_12may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-12 10:24:40\",\n                \"modified_at\": \"2026-05-12 10:30:03\"\n            },\n            {\n                \"template_id\": 29262,\n                \"template_name\": \"lp_unsec_cash_may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-07 14:08:39\",\n                \"modified_at\": \"2026-05-07 14:26:02\"\n            },\n            {\n                \"template_id\": 29079,\n                \"template_name\": \"unsec_solint_06may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-06 12:40:09\",\n                \"modified_at\": \"2026-05-06 12:42:02\"\n            },\n            {\n                \"template_id\": 29055,\n                \"template_name\": \"unsec_j2329_rcs_r1_m\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-06 11:18:38\",\n                \"modified_at\": \"2026-05-06 11:22:03\"\n            },\n            {\n                \"template_id\": 29053,\n                \"template_name\": \"lp_unsec_nic_06may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-06 10:59:48\",\n                \"modified_at\": \"2026-05-06 11:04:02\"\n            },\n            {\n                \"template_id\": 28545,\n                \"template_name\": \"unsec_pvs_off_2may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-02 09:54:17\",\n                \"modified_at\": \"2026-05-02 10:06:02\"\n            },\n            {\n                \"template_id\": 28453,\n                \"template_name\": \"unsec_pl2pl_01may26\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-01 11:55:41\",\n                \"modified_at\": \"2026-05-01 12:00:03\"\n            },\n            {\n                \"template_id\": 28245,\n                \"template_name\": \"nc_jio_1\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-04-29 19:22:34\",\n                \"modified_at\": \"2026-04-29 19:30:07\"\n            }\n        ],\n        \"total_rows\": 38\n    }\n}{\"errors\":[{\"message\":\"ContentType not valid\",\"field\":\"ContentType\"}]}"
+            }
+          ]
+        },
+        {
+          "name": "Single Template Preview",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "api_key",
+                "value": "{{rcs_api_key}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "nc_bot_id",
+                "value": "NjlmMWI3O155124",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://soipapi.netcorecloud.com/rcs/template/preview?template_id=45384",
+              "protocol": "https",
+              "host": [
+                "soipapi",
+                "netcorecloud",
+                "com"
+              ],
+              "path": [
+                "rcs",
+                "template",
+                "preview"
+              ],
+              "query": [
+                {
+                  "key": "template_id",
+                  "value": "45384"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Single Template Preview",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "api_key",
+                    "value": "{{rcs_api_key}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "nc_bot_id",
+                    "value": "NjlmMWI3O155124",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://soipapi.netcorecloud.com/rcs/template/preview?template_id=45384",
+                  "protocol": "https",
+                  "host": [
+                    "soipapi",
+                    "netcorecloud",
+                    "com"
+                  ],
+                  "path": [
+                    "rcs",
+                    "template",
+                    "preview"
+                  ],
+                  "query": [
+                    {
+                      "key": "template_id",
+                      "value": "45384"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-headers",
+                  "value": "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding, x-access-token"
+                },
+                {
+                  "key": "access-control-allow-methods",
+                  "value": "POST, GET, OPTIONS"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "https://*.netcorecloud.com, https://*.netcorecloud.net, https://*.falconide.com, https://*.pepipost.com"
+                },
+                {
+                  "key": "access-control-max-age",
+                  "value": "86400"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-store, no-cache, must-revalidate"
+                },
+                {
+                  "key": "content-security-policy",
+                  "value": "script-src 'self'; object-src 'none'; default-src 'self'"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "deny"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "1; mode=block"
+                },
+                {
+                  "key": "x-cloud-trace-context",
+                  "value": "081cf6209d822121ffdb2b186b99397f"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 16 Sep 2026 08:59:48 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Google Frontend"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "905"
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google"
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "h3=\":443\"; ma=2592000"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Data fetched successfully\",\n    \"template_id\": 45384,\n    \"data\": {\n        \"template_name\": \"mapp_cc_2234\",\n        \"template_type\": \"text_message\",\n        \"template_status\": \"auto-approved\",\n        \"template_content\": \"💳 Apply for a Credit Card on Bajaj Markets App today!\\r\\n\\r\\n🎁 Rewards, cashback, lounge access & more\\r\\n 📱 100% digital application\\r\\n\\r\\n*T&C Apply\\r\\n\",\n        \"orientation\": \"\",\n        \"alignment\": \"\",\n        \"height\": \"\",\n        \"width\": \"\",\n        \"suggestion_details\": [\n            {\n                \"suggestion_type\": \"2\",\n                \"suggestion\": \"{\\\"displayText\\\":\\\"Apply Now\\\",\\\"postback\\\":\\\"Apply Now\\\",\\\"url\\\":\\\"https:\\\\/\\\\/app.bajajfinservmarkets.in\\\\/ywulMduC45b\\\"}\"\n            }\n        ],\n        \"created_date\": \"2026-09-01 13:12:14\",\n        \"updated_date\": \"2026-09-01 13:20:03\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Send RCS Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "authorization",
+                "value": "Bearer 5907621c8e38332753d8c34ae"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n{\n  \"messages\": [\n    {\n      \"To\": \"919999999999\",\n      \"content\": {\n        \"orientation\": \"vertical\",\n        \"alignment\": \"right\",\n        \"content\": {\n          \"title\": \"Amazon Black Friday Sale 2021,\",\n          \"description\": \"Online shopping for Black Friday Sale from a great selection at Electronics Store.\",\n          \"media\": {\n            \"file\": {\n              \"url\": \"https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/AUX/sbv-hero._TTW_.jpg\"\n            },\n            \"thumbnail\": {\n              \"url\": \"https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/AUX/sbv-hero._TTW_.jpg\"\n            },\n            \"height\": \"MEDIUM\"\n          }\n        },\n        \"type\": \"CARD\"\n      },\n      \"callbackData\": \"Callback data\",\n      \"tags\": [\n        \"asd\",\n        \"sdfdf\",\n        \"dfdf\"\n      ]\n    }\n  ],\n  \"fallbackstatus\": true,\n  \"fallbackchain\": [\n    {\n      \"channel\": \"RCS\"\n    }\n  ]\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://soipapi.netcorecloud.com/soip/rcs/v2/message",
+              "protocol": "https",
+              "host": [
+                "soipapi",
+                "netcorecloud",
+                "com"
+              ],
+              "path": [
+                "soip",
+                "rcs",
+                "v2",
+                "message"
+              ]
+            },
+            "description": "Generated from cURL: curl --request POST \\\n     --url https://soipapi.netcorecloud.com/soip/rcs/v2/message \\\n     --header 'accept: application/json' \\\n     --header 'authorization: Bearer 5907621c8e38332753d8c34ae' \\\n     --header 'content-type: application/json' \\\n     --data '\n{\n  \"messages\": [\n    {\n      \"To\": \"919999999999\",\n      \"content\": {\n        \"orientation\": \"vertical\",\n        \"alignment\": \"right\",\n        \"content\": {\n          \"title\": \"Amazon Black Friday Sale 2021,\",\n          \"description\": \"Online shopping for Black Friday Sale from a great selection at Electronics Store.\",\n          \"media\": {\n            \"file\": {\n              \"url\": \"https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/AUX/sbv-hero._TTW_.jpg\"\n            },\n            \"thumbnail\": {\n              \"url\": \"https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/AUX/sbv-hero._TTW_.jpg\"\n            },\n            \"height\": \"MEDIUM\"\n          }\n        },\n        \"type\": \"CARD\"\n      },\n      \"callbackData\": \"Callback data\",\n      \"tags\": [\n        \"asd\",\n        \"sdfdf\",\n        \"dfdf\"\n      ]\n    }\n  ],\n  \"fallbackstatus\": true,\n  \"fallbackchain\": [\n    {\n      \"channel\": \"RCS\"\n    }\n  ]\n}\n'"
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch RCS Bot Info",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "api_key",
+                "value": "5907621c8e38332753d8c34ae",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://soipapi.netcorecloud.com/rcs/botinfo",
+              "protocol": "https",
+              "host": [
+                "soipapi",
+                "netcorecloud",
+                "com"
+              ],
+              "path": [
+                "rcs",
+                "botinfo"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Fetch RCS Bot Info",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "api_key",
+                    "value": "5907621c8e38332753d8c34ae",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://soipapi.netcorecloud.com/rcs/botinfo",
+                  "protocol": "https",
+                  "host": [
+                    "soipapi",
+                    "netcorecloud",
+                    "com"
+                  ],
+                  "path": [
+                    "rcs",
+                    "botinfo"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-headers",
+                  "value": "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding, x-access-token"
+                },
+                {
+                  "key": "access-control-allow-methods",
+                  "value": "POST, GET, OPTIONS"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "https://*.netcorecloud.com, https://*.netcorecloud.net, https://*.falconide.com, https://*.pepipost.com"
+                },
+                {
+                  "key": "access-control-max-age",
+                  "value": "86400"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-store, no-cache, must-revalidate"
+                },
+                {
+                  "key": "content-security-policy",
+                  "value": "script-src 'self'; object-src 'none'; default-src 'self'"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "deny"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "1; mode=block"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 16 Sep 2026 08:38:45 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Google Frontend"
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google"
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "h3=\":443\"; ma=2592000"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Data fetched successfully\",\n    \"client_id\": 155124,\n    \"data\": {\n        \"bot_details\": [\n            {\n                \"nc_bot_id\": \"NjlmMWI0Y155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_7_f72_JIO\",\n                \"business_name\": \"BFDL_PS_7_f72_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NjlmMWI2M155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_6_fe0_JIO\",\n                \"business_name\": \"BFDL_PS_6_fe0_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NjlmMWI3O155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_3_f96_JIO\",\n                \"business_name\": \"BFDL_PS_3_f96_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NjlmMWI4N155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_2_fb7_JIO\",\n                \"business_name\": \"BFDL_PS_2_fb7_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NjlmMWIwY155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_8_f71_JIO\",\n                \"business_name\": \"BFDL_PS_8_f71_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NjlmMWMwN155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_4_01b_JIO\",\n                \"business_name\": \"BFDL_PS_4_01b_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NjlmMWMxM155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_1_071\",\n                \"business_name\": \"BFDL_PS_1_071_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NjlmMWMyO155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"BFDL_PS_5_092_JIO\",\n                \"business_name\": \"BFDL_PS_5_092_JIO\"\n            },\n            {\n                \"nc_bot_id\": \"NmE4ZWFjM155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"Bajaj_Markets\",\n                \"business_name\": \"Bajaj_Markets\"\n            },\n            {\n                \"nc_bot_id\": \"NmE4ZWFmY155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"Bajaj_Markets\",\n                \"business_name\": \"Bajaj_Markets\"\n            },\n            {\n                \"nc_bot_id\": \"NmE5MDIwO155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"Bajaj_Markets\",\n                \"business_name\": \"Bajaj_Markets\"\n            },\n            {\n                \"nc_bot_id\": \"NmE5MDIxM155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"Bajaj_Markets\",\n                \"business_name\": \"Bajaj_Markets\"\n            },\n            {\n                \"nc_bot_id\": \"NmE5MDIxY155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"Bajaj_Markets\",\n                \"business_name\": \"Bajaj_Markets\"\n            },\n            {\n                \"nc_bot_id\": \"NmE5OTQ3N155124\",\n                \"bot_type\": \"Promotional\",\n                \"bot_name\": \"Bajaj_Markets\",\n                \"business_name\": \"Bajaj_Markets\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Fetch RCS Templates",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "api_key",
+                "value": "{{rcs_api_key}}",
+                "type": "text"
+              },
+              {
+                "key": "nc_bot_id",
+                "value": "NjlmMWI3O155124",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://soipapi.netcorecloud.com/rcs/template?status=approved&limit=100&offset=0",
+              "protocol": "https",
+              "host": [
+                "soipapi",
+                "netcorecloud",
+                "com"
+              ],
+              "path": [
+                "rcs",
+                "template"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "approved"
+                },
+                {
+                  "key": "limit",
+                  "value": "100"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Fetch RCS Templates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "api_key",
+                    "value": "{{rcs_api_key}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "nc_bot_id",
+                    "value": "NjlmMWI3O155124",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "https://soipapi.netcorecloud.com/rcs/template?status=approved&limit=100&offset=0",
+                  "protocol": "https",
+                  "host": [
+                    "soipapi",
+                    "netcorecloud",
+                    "com"
+                  ],
+                  "path": [
+                    "rcs",
+                    "template"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "approved"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-headers",
+                  "value": "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding, x-access-token"
+                },
+                {
+                  "key": "access-control-allow-methods",
+                  "value": "POST, GET, OPTIONS"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "https://*.netcorecloud.com, https://*.netcorecloud.net, https://*.falconide.com, https://*.pepipost.com"
+                },
+                {
+                  "key": "access-control-max-age",
+                  "value": "86400"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-store, no-cache, must-revalidate"
+                },
+                {
+                  "key": "content-security-policy",
+                  "value": "script-src 'self'; object-src 'none'; default-src 'self'"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "deny"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "1; mode=block"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 16 Sep 2026 09:01:56 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Google Frontend"
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google"
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "h3=\":443\"; ma=2592000"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Data fetched successfully\",\n    \"client_id\": 155124,\n    \"data\": {\n        \"bot_id\": \"NjlmMWI3O155124\",\n        \"bot_type\": \"Promotional\",\n        \"bot_name\": \"BFDL_PS_3_f96_JIO\",\n        \"templates\": [\n            {\n                \"template_id\": 45384,\n                \"template_name\": \"mapp_cc_2234\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-09-01 13:12:14\",\n                \"modified_at\": \"2026-09-01 13:20:03\"\n            },\n            {\n                \"template_id\": 45376,\n                \"template_name\": \"mapp_ls_2234\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-09-01 12:36:02\",\n                \"modified_at\": \"2026-09-01 12:46:03\"\n            },\n            {\n                \"template_id\": 45063,\n                \"template_name\": \"mapp_j2432_2_rt\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-08-29 16:35:14\",\n                \"modified_at\": \"2026-08-29 16:40:03\"\n            },\n            {\n                \"template_id\": 44780,\n                \"template_name\": \"mapp_j2258_2\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-08-27 15:42:16\",\n                \"modified_at\": \"2026-08-27 15:48:03\"\n            },\n            {\n                \"template_id\": 44753,\n                \"template_name\": \"mapp_j2258\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-08-27 13:22:57\",\n                \"modified_at\": \"2026-08-27 15:48:03\"\n            },\n            {\n                \"template_id\": 44018,\n                \"template_name\": \"mapp_ab_j457\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-21 17:21:56\",\n                \"modified_at\": \"2026-08-21 17:32:03\"\n            },\n            {\n                \"template_id\": 44014,\n                \"template_name\": \"mapp_ab_j2185\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-08-21 16:57:35\",\n                \"modified_at\": \"2026-08-21 17:10:03\"\n            },\n            {\n                \"template_id\": 44013,\n                \"template_name\": \"mapp_ab_j1788\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-08-21 16:56:45\",\n                \"modified_at\": \"2026-08-21 17:02:03\"\n            },\n            {\n                \"template_id\": 42702,\n                \"template_name\": \"mapp_cc_2258\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-08-13 11:25:46\",\n                \"modified_at\": \"2026-08-13 11:50:03\"\n            },\n            {\n                \"template_id\": 39579,\n                \"template_name\": \"mapp_hl_2258\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-07-22 12:14:49\",\n                \"modified_at\": \"2026-07-22 12:16:03\"\n            },\n            {\n                \"template_id\": 39573,\n                \"template_name\": \"mapp_ls_2258_2\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-07-22 11:24:29\",\n                \"modified_at\": \"2026-07-22 11:32:02\"\n            },\n            {\n                \"template_id\": 39568,\n                \"template_name\": \"mapp_ls_2258\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-07-22 11:09:38\",\n                \"modified_at\": \"2026-07-22 11:12:03\"\n            },\n            {\n                \"template_id\": 39322,\n                \"template_name\": \"aquisition_webul_2\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-07-20 14:15:57\",\n                \"modified_at\": \"2026-07-20 14:20:04\"\n            },\n            {\n                \"template_id\": 37490,\n                \"template_name\": \"mapp_j2413\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-07-07 13:16:36\",\n                \"modified_at\": \"2026-07-07 13:18:02\"\n            },\n            {\n                \"template_id\": 35984,\n                \"template_name\": \"journey_ondc_grcs_2\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-26 16:05:05\",\n                \"modified_at\": \"2026-06-26 16:08:03\"\n            },\n            {\n                \"template_id\": 35671,\n                \"template_name\": \"_mapp_j2383\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-24 10:39:17\",\n                \"modified_at\": \"2026-06-24 11:00:03\"\n            },\n            {\n                \"template_id\": 34983,\n                \"template_name\": \"mapp_j2160\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-06-18 14:07:26\",\n                \"modified_at\": \"2026-06-18 14:32:03\"\n            },\n            {\n                \"template_id\": 33632,\n                \"template_name\": \"journey_2160_2\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-06-08 13:38:23\",\n                \"modified_at\": \"2026-06-08 13:56:03\"\n            },\n            {\n                \"template_id\": 30260,\n                \"template_name\": \"journey_2160\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-14 13:16:37\",\n                \"modified_at\": \"2026-05-14 13:22:03\"\n            },\n            {\n                \"template_id\": 30051,\n                \"template_name\": \"journey_2279\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-13 11:56:58\",\n                \"modified_at\": \"2026-05-13 12:00:03\"\n            },\n            {\n                \"template_id\": 29086,\n                \"template_name\": \"journey_2258\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-06 13:06:01\",\n                \"modified_at\": \"2026-05-11 15:18:03\"\n            },\n            {\n                \"template_id\": 29141,\n                \"template_name\": \"lp_rcs_jrny_1962\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-06 17:33:46\",\n                \"modified_at\": \"2026-05-06 17:38:02\"\n            },\n            {\n                \"template_id\": 29081,\n                \"template_name\": \"lp_rcs_jrny_1958\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-06 12:52:24\",\n                \"modified_at\": \"2026-05-06 15:20:03\"\n            },\n            {\n                \"template_id\": 28980,\n                \"template_name\": \"journey_2178\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 16:40:23\",\n                \"modified_at\": \"2026-05-05 16:44:03\"\n            },\n            {\n                \"template_id\": 28978,\n                \"template_name\": \"journey_2318\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-05 16:38:53\",\n                \"modified_at\": \"2026-05-05 16:42:02\"\n            },\n            {\n                \"template_id\": 28974,\n                \"template_name\": \"journey_2299\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 16:31:14\",\n                \"modified_at\": \"2026-05-05 16:40:02\"\n            },\n            {\n                \"template_id\": 28973,\n                \"template_name\": \"journey_2245\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 16:29:39\",\n                \"modified_at\": \"2026-05-05 16:32:03\"\n            },\n            {\n                \"template_id\": 28972,\n                \"template_name\": \"journey_2235\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-05 16:27:40\",\n                \"modified_at\": \"2026-05-05 16:30:03\"\n            },\n            {\n                \"template_id\": 28971,\n                \"template_name\": \"journey_2339\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-05 16:24:08\",\n                \"modified_at\": \"2026-05-05 16:28:03\"\n            },\n            {\n                \"template_id\": 28965,\n                \"template_name\": \"journey_2202\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-05 16:11:10\",\n                \"modified_at\": \"2026-05-05 16:26:03\"\n            },\n            {\n                \"template_id\": 28964,\n                \"template_name\": \"journey_2256\",\n                \"template_type\": \"text_message\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Text Message\",\n                \"created_at\": \"2026-05-05 16:06:40\",\n                \"modified_at\": \"2026-05-05 16:14:02\"\n            },\n            {\n                \"template_id\": 28963,\n                \"template_name\": \"journey_pl_aip_2191\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 16:03:00\",\n                \"modified_at\": \"2026-05-05 16:08:03\"\n            },\n            {\n                \"template_id\": 28962,\n                \"template_name\": \"journey_457\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 16:01:21\",\n                \"modified_at\": \"2026-05-05 16:04:03\"\n            },\n            {\n                \"template_id\": 28961,\n                \"template_name\": \"journey_1850\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 15:59:52\",\n                \"modified_at\": \"2026-05-05 16:02:03\"\n            },\n            {\n                \"template_id\": 28960,\n                \"template_name\": \"journey_1788\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 15:57:53\",\n                \"modified_at\": \"2026-05-05 16:00:03\"\n            },\n            {\n                \"template_id\": 28950,\n                \"template_name\": \"journey_pl_dnd_pb_nw\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 15:47:25\",\n                \"modified_at\": \"2026-05-05 15:50:03\"\n            },\n            {\n                \"template_id\": 28946,\n                \"template_name\": \"aquisition_webul_new\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-05-05 15:44:23\",\n                \"modified_at\": \"2026-05-05 15:48:03\"\n            },\n            {\n                \"template_id\": 28256,\n                \"template_name\": \"nc_jio_3\",\n                \"template_type\": \"rich_card\",\n                \"template_status\": \"auto-approved\",\n                \"display_template_type\": \"Rich card standalone\",\n                \"created_at\": \"2026-04-29 20:37:17\",\n                \"modified_at\": \"2026-04-29 20:42:02\"\n            }\n        ],\n        \"total_rows\": 38\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SMS",
+      "item": [
+        {
+          "name": "Send a single SMS to one or more recipients",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n{\n  \"feedid\": \"392095\",\n  \"username\": \"9137964367\",\n  \"password\": \"your_password\",\n  \"mobile\": \"9870524533,9956808517\",\n  \"messages\": \"Your OTP is 456789\",\n  \"senderid\": \"MYAPP\",\n  \"short\": \"0\",\n  \"async\": \"0\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://smsapi.netcorecloud.net/BulkSms/v2/JsonSingleApi",
+              "protocol": "https",
+              "host": [
+                "smsapi",
+                "netcorecloud",
+                "net"
+              ],
+              "path": [
+                "BulkSms",
+                "v2",
+                "JsonSingleApi"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
