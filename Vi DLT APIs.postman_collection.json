@@ -251,7 +251,450 @@
     },
     {
       "name": "02 Enterprise Registration",
-      "item": []
+      "item": [
+        {
+          "name": "Register Header",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "acces",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"htype\": \"O\",\r\n  \"hctgy\": 1,\r\n  \"hdr\": \"BMRKTS\",\r\n  \"hdesc\": \"Existing header duplicate validation\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/header",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "header"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "412 - Header Already Registered",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "acces",
+                    "value": "",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"htype\": \"O\",\r\n  \"hctgy\": 1,\r\n  \"hdr\": \"BMRKTS\",\r\n  \"hdesc\": \"Existing header duplicate validation\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/header",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "header"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 17 Sep 2026 06:57:20 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "52"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS, POST"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubdomains; preload"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 412,\n    \"message\": \"header already registered\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Register Content Template",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_04lf}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": " application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"ttype\": \"SI\",\r\n  \"ctgy\": 1,\r\n  \"hdrs\": [\"BMRKTS\"],\r\n  \"msgtype\": 1,\r\n  \"tname\": \"API Validation Test\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/content_template",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "content_template"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "404 - Mandatory Template Parameters Missing",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": " application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"ttype\": \"SI\",\r\n  \"ctgy\": 1,\r\n  \"hdrs\": [\"BMRKTS\"],\r\n  \"msgtype\": 1,\r\n  \"tname\": \"API Validation Test\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/content_template",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "content_template"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 16 Sep 2026 12:42:58 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS, POST"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubdomains; preload"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 404,\n    \"message\": \"Parameter is missing\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Link Header",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": " application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"ctid\": \"{{template_id}}\",\r\n  \"type\": 1,\r\n  \"hid\": \"{{header_id}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/addremove_template_headers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "addremove_template_headers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Link Header",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": " application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"ctid\": \"{{template_id}}\",\r\n  \"type\": 1,\r\n  \"hid\": \"{{header_id}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/addremove_template_headers",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "addremove_template_headers"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 17 Sep 2026 06:58:01 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "97"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Allow",
+                  "value": "OPTIONS, POST"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubdomains; preload"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 424,\n    \"msg\": \"Link and Delink of headers for content template is currently not available\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "De-link Header",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eid\": \"{{entity_id}}\",\r\n  \"ctid\": \"{{template_id}}\",\r\n  \"type\": 2,\r\n  \"hid\": \"{{header_id}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/addremove_template_headers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "addremove_template_headers"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     },
     {
       "name": "03 Registration Callback Simulations",
@@ -1122,6 +1565,42 @@
         "postman": {
           "type": "cloud",
           "secretId": "f758fa14-b8e0-46d0-9c71-eb11fc0905f3",
+          "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
+        }
+      }
+    },
+    {
+      "key": "json_web_token_04lf",
+      "secret": true,
+      "source": {
+        "provider": "postman",
+        "postman": {
+          "type": "cloud",
+          "secretId": "6a2a8ea3-8abf-4ec6-9dfa-54c378d8c428",
+          "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
+        }
+      }
+    },
+    {
+      "key": "auth_secret_04lf",
+      "secret": true,
+      "source": {
+        "provider": "postman",
+        "postman": {
+          "type": "cloud",
+          "secretId": "3765069c-c550-4527-81f8-9acc21434238",
+          "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
+        }
+      }
+    },
+    {
+      "key": "json_web_token_0oiy",
+      "secret": true,
+      "source": {
+        "provider": "postman",
+        "postman": {
+          "type": "cloud",
+          "secretId": "ed2819c3-08a3-4d02-9dbe-4fd8a9b088db",
           "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
         }
       }
