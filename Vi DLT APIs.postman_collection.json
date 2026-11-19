@@ -5,7 +5,62 @@
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "58236078",
     "_collection_link": "https://go.postman.co/collection/58236078-1eb51429-e53c-4eb9-80b5-9f132425299f?source=collection_link"
+    ,"description": "Repository-only repair: select the supplied Vi DLT Testing environment. The base host comes from the saved token example, not an independently verified provider contract. Generate Token saves access_token and refresh_token; Refresh Access Token updates access_token and preserves refresh_token unless the server rotates it. Credentials remain blank: the former Postman vault references did not contain portable credentials. Provider mutations require allow_mutations=true after explicit review. Register Content Template remains an incomplete negative example (no documented content-text field); do not infer successful whitelisting from it. Saved HTTP 200 examples include business failures. Callback requests are simulations, not provider status reads. No live provider verification was performed."
   },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "const name = pm.info.requestName;",
+          "const auth = name === 'Generate Token' || name === 'Refresh Access Token';",
+          "const provider = auth || ['Register Header', 'Register Content Template', 'Link Header', 'De-link Header'].includes(name);",
+          "const requireValue = key => { const value = pm.variables.get(key); if (typeof value !== 'string' || !value.trim() || /\\{\\{|redacted/i.test(value)) throw new Error('Set a real local value for ' + key); return value; };",
+          "if (name === 'Generate Token') { pm.environment.unset('access_token'); pm.environment.unset('refresh_token'); }",
+          "if (name === 'Refresh Access Token') pm.environment.unset('access_token');",
+          "try {",
+          "  const destination = requireValue(provider ? 'base_url' : 'callback_url');",
+          "  if (!/^https:\\/\\/[^\\s/?#]+(?:\\/[^\\s?#]*)?$/.test(destination)) throw new Error('Use an explicit HTTPS destination without query or fragment');",
+          "  if (name === 'Generate Token') { requireValue('username'); requireValue('password'); }",
+          "  else if (name === 'Refresh Access Token') requireValue('refresh_token');",
+          "  else {",
+          "    if (pm.variables.get('allow_mutations') !== 'true') throw new Error('Review this mutation or callback simulation, then explicitly set allow_mutations=true');",
+          "    if (provider) { requireValue('access_token'); requireValue('entity_id'); }",
+          "    if (name === 'Link Header' || name === 'De-link Header') { requireValue('header_id'); requireValue('template_id'); }",
+          "  }",
+          "} catch (error) { pm.execution.skipRequest(); throw error; }"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "const name = pm.info.requestName;",
+          "const auth = name === 'Generate Token' || name === 'Refresh Access Token';",
+          "let body; let parseError;",
+          "try { body = pm.response.json(); } catch (error) { parseError = error; }",
+          "const token = value => typeof value === 'string' && value.trim().length > 0 && !/\\{\\{|redacted/i.test(value);",
+          "const httpOK = pm.response.code >= 200 && pm.response.code < 300;",
+          "const object = !parseError && body !== null && typeof body === 'object' && !Array.isArray(body);",
+          "const status = object ? body.status : undefined;",
+          "const businessOK = status === undefined || (Number.isFinite(Number(status)) && Number(status) >= 200 && Number(status) < 300);",
+          "const accepted = httpOK && object && businessOK && !body.error && !body.error_text && !body.detail;",
+          "pm.test('HTTP and JSON business response indicate success', () => { pm.expect(accepted).to.eql(true); });",
+          "if (auth) {",
+          "  const valid = accepted && token(body.access) && (name !== 'Generate Token' || token(body.refresh)) && (body.refresh === undefined || token(body.refresh));",
+          "  pm.test('Authentication returned usable token fields', () => { pm.expect(valid).to.eql(true); });",
+          "  if (valid) {",
+          "    pm.environment.set('access_token', body.access);",
+          "    if (body.refresh !== undefined) pm.environment.set('refresh_token', body.refresh);",
+          "  } else { pm.environment.unset('access_token'); pm.environment.unset('refresh_token'); }",
+          "}"
+        ]
+      }
+    }
+  ],
   "item": [
     {
       "name": "01 Authentication",
@@ -142,7 +197,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"refresh\": \"{{json_web_token_15n7}}\"\r\n}",
+              "raw": "{\r\n  \"refresh\": \"{{refresh_token}}\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -260,7 +315,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{access}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -268,14 +323,14 @@
             "method": "POST",
             "header": [
               {
-                "key": "acces",
-                "value": "",
+                "key": "Content-Type",
+                "value": "application/json",
                 "type": "text"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"htype\": \"O\",\r\n  \"hctgy\": 1,\r\n  \"hdr\": \"BMRKTS\",\r\n  \"hdesc\": \"Existing header duplicate validation\"\r\n}",
+              "raw": "{\r\n  \"eid\": \"{{entity_id}}\",\r\n  \"htype\": \"O\",\r\n  \"hctgy\": 1,\r\n  \"hdr\": \"BMRKTS\",\r\n  \"hdesc\": \"Existing header duplicate validation\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -395,7 +450,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{auth_secret_04lf}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -404,13 +459,13 @@
             "header": [
               {
                 "key": "Content-Type",
-                "value": " application/json",
+                "value": "application/json",
                 "type": "text"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"ttype\": \"SI\",\r\n  \"ctgy\": 1,\r\n  \"hdrs\": [\"BMRKTS\"],\r\n  \"msgtype\": 1,\r\n  \"tname\": \"API Validation Test\"\r\n}",
+              "raw": "{\r\n  \"eid\": \"{{entity_id}}\",\r\n  \"ttype\": \"SI\",\r\n  \"ctgy\": 1,\r\n  \"hdrs\": [\"BMRKTS\"],\r\n  \"msgtype\": 1,\r\n  \"tname\": \"API Validation Test\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -530,7 +585,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{access}}",
+                  "value": "{{access_token}}",
                   "type": "string"
                 }
               ]
@@ -539,13 +594,13 @@
             "header": [
               {
                 "key": "Content-Type",
-                "value": " application/json",
+                "value": "application/json",
                 "type": "text"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"eid\": \"{{username}}\",\r\n  \"ctid\": \"{{template_id}}\",\r\n  \"type\": 1,\r\n  \"hid\": \"{{header_id}}\"\r\n}",
+              "raw": "{\r\n  \"eid\": \"{{entity_id}}\",\r\n  \"ctid\": \"{{template_id}}\",\r\n  \"type\": 1,\r\n  \"hid\": \"{{header_id}}\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1550,60 +1605,6 @@
           ]
         }
       ]
-    }
-  ],
-  "variable": [
-    {
-      "key": "refresh_token",
-      "value": ""
-    },
-    {
-      "key": "json_web_token_15n7",
-      "secret": true,
-      "source": {
-        "provider": "postman",
-        "postman": {
-          "type": "cloud",
-          "secretId": "f758fa14-b8e0-46d0-9c71-eb11fc0905f3",
-          "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
-        }
-      }
-    },
-    {
-      "key": "json_web_token_04lf",
-      "secret": true,
-      "source": {
-        "provider": "postman",
-        "postman": {
-          "type": "cloud",
-          "secretId": "6a2a8ea3-8abf-4ec6-9dfa-54c378d8c428",
-          "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
-        }
-      }
-    },
-    {
-      "key": "auth_secret_04lf",
-      "secret": true,
-      "source": {
-        "provider": "postman",
-        "postman": {
-          "type": "cloud",
-          "secretId": "3765069c-c550-4527-81f8-9acc21434238",
-          "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
-        }
-      }
-    },
-    {
-      "key": "json_web_token_0oiy",
-      "secret": true,
-      "source": {
-        "provider": "postman",
-        "postman": {
-          "type": "cloud",
-          "secretId": "ed2819c3-08a3-4d02-9dbe-4fd8a9b088db",
-          "vaultId": "69500c79-d0ef-4f7d-b162-7609222e1635"
-        }
-      }
     }
   ]
 }
